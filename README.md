@@ -30,7 +30,6 @@ Uses `wiremock-php/wiremock-php` to control/record WireMock Server trough the `_
 - Support for JSON/Graphql/XML/SOAP
 - Keeps info about all received requests/ missed matches for debugging
 - Library with mocks - https://library.wiremock.org/
-- Could be used between Pepper projects, Pepper APP Mocks for APPs or Pepper Business
 
 **Cons**
 
