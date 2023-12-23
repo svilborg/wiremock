@@ -1,0 +1,25 @@
+{
+  "id": "8b830f63-9592-49c5-940b-2033b55f1111",
+  "name": "sample-random",
+  "request": {
+    "urlPattern": "/random",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"status\":\"ok\", \"created\": {{now format=\"unix\"}}, \"message\":\"Sample random string: {{randomValue length=33 type='ALPHANUMERIC'}}\"}",
+    "transformerParameters": {
+      "newValue": 66
+    },
+    "transformers": [
+      "response-template"
+    ],
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Sat, 14 Oct 2023 10:52:34 GMT"
+    }
+  },
+  "uuid": "8b830f63-9592-49c5-940b-2033b55f1111",
+  "persistent": true,
+  "insertionIndex": 10
+}

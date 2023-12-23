@@ -1,0 +1,21 @@
+{
+  "id": "8b830f63-9592-49c5-940b-2033b55f2222",
+  "name": "sample-param",
+  "request": {
+    "urlPattern": "/param(.*)",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"message\":\"Called with: {{request.query.id}} \", \"number\" : \"{{#if (matches request.query.id '[0-9]+')}}YES{{else}}NO{{/if}}\"}",
+    "transformers": [
+      "response-template"
+    ],
+    "headers": {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  },
+  "uuid": "8b830f63-9592-49c5-940b-2033b55f2222",
+  "persistent": true,
+  "insertionIndex": 11
+}

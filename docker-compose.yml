@@ -1,0 +1,30 @@
+version: "3"
+services:
+  wiremock:
+    image: "wiremock/wiremock:latest"
+    container_name: wiremock
+    networks:
+      - wiremock-network
+    ports:
+      - "8888:8080"
+    volumes:
+      - ./wiremock:/home/wiremock
+    entrypoint: [ "/docker-entrypoint.sh", "--global-response-templating", "--disable-gzip", "--verbose" ]
+
+  wiremockapp:
+    image: containers.pepper.com:4567/containers/pepper-builder:php81-3
+    networks:
+      - wiremock-network
+    container_name: wiremockapp
+    working_dir: /var/www/html
+    command: bash -c "/container-startup-daemon"
+    volumes:
+      - "./:/var/www/html:cached"
+    ports:
+      - "80:80"
+    depends_on:
+      - wiremock
+
+networks:
+  wiremock-network:
+    driver: bridge

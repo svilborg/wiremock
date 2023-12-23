@@ -1,0 +1,21 @@
+{
+  "id": "8b830f63-9592-49c5-940b-2033b55f0000",
+  "name": "sample-delay",
+  "request": {
+    "urlPattern": "/delay",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 5000,
+    "body": "{\"status\":\"ok\",\"message\":\"Sample with delay\"}",
+    "headers": {
+      "Server": "Cowboy",
+      "Content-Type": "application/json; charset=utf-8",
+      "Date": "Sat, 14 Oct 2023 10:52:34 GMT"
+    }
+  },
+  "uuid": "8b830f63-9592-49c5-940b-2033b55f0000",
+  "persistent": true,
+  "insertionIndex": 9
+}
